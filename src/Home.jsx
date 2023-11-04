@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import db from './firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import Logo from './assets/hha-logo.svg'
-import folding from './assets/folding-man.svg'
+import folding from './assets/folding-man.png'
 import chat from './assets/ai-chatroom.png'
 import { useParams } from 'react-router-dom';
 
@@ -53,7 +53,7 @@ const Home = () => {
     <div>
         {userData ? ( 
    <div className='w-full '>
-   <div className='mb-[5rem]'>
+   <div className='mb-[2rem] md:mb-[5rem]'>
   <nav className='w-full h-full max-h-[2rem] flex flex-row items-start px-4 py-8 md:px-8 md:py-8'>
   <img src={Logo} alt="HousehelpApp Logo"  className='w-full h-full max-w-[160px] max-h-[36px] md:max-w-[210px] md:max-h-[52px]'/>
   </nav>
@@ -61,13 +61,13 @@ const Home = () => {
   <div className='flex flex-col w-full items-center justify-center'>
 
 
-  <div className='font-frauces text-center flex flex-col items-center justify-center gap-12 mb-12 '>
-    <p className='text-[32px] md:text-[40px] w-full max-w-[744px]'>Hi there, <span className='text-[#2AB34B]'> {userFn} . {userLn?.slice(0, 1)}  </span>  wants you to join the HouseHelpApp family today. </p>
+  <div className='font-frauces text-center flex flex-col items-center justify-center gap-6 md:gap-12 mb-12 '>
+    <p className='text-[32px] md:text-[40px] w-full max-w-[744px] font-semibold '>Hi 👋🏾 , <span className=' text-[#2AB34B]'> {userFn}.{userLn?.slice(0, 1)}  </span>  wants you to join the HouseHelpApp family today. </p>
 
-    <p className='text-[24px] md:text-[32px]'>use the code: <span className='text-[32px] md:text-[40px] text-[#2AB34B]'>{userCode}</span></p>
+    <p className='text-[24px] md:text-[32px]'>use the code: <span className='text-[32px] md:text-[40px] font-semibold text-[#2AB34B]'>{userCode}</span></p>
   </div>
 
-  <div className='font-frauces text-center flex flex-col items-center justify-center gap-4 mb-32 '>
+  <div className='font-frauces text-center flex flex-col items-center justify-center gap-4 mb-16 md:mb-32 '>
     <p className='text-[18px] md:text-[24px] w-full max-w-[744px]'>sign up as a <span className='font-semibold text-[#00AAAF]'>Client</span> and get access to professional services for your everyday needs </p>
     <p>OR</p>
     <p className='text-[18px] md:text-[24px] w-full max-w-[744px]'>sign up as a <span className='font-semibold text-[#00AAAF]'>Helper</span>, offer your professional services and earn money</p>
@@ -86,7 +86,7 @@ const Home = () => {
 
   {/* ai chat */}
   <div className='bg-[#4853A4] text-white w-full h-full relative py-12 md:py-24'>
-    <h2 className='text-[24px] md:text-[40px] font-semibold md:pl-24 pl-4 mb-[2rem]'>Don’t miss out on our AI feature</h2>
+    <h2 className='text-[24px] md:text-[40px] font-semibold md:pl-24 pl-4 mb-[1rem] md:mb-[2rem]'>Don’t miss out on our <br /> exciting AI feature</h2>
     <p className=' text-[16px] md:text-[28px] w-full max-w-[800px] mb-4 md:pl-24 pl-4'>Get an immersive first-hand AI experience. Engage in conversations with your personalised AI assistant and explore the limitless potential of AI as your everyday companion.</p>
 <img src={chat} alt="ai chat" />
   </div>
