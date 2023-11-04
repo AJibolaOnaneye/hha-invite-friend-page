@@ -58,7 +58,7 @@ const App = () => {
 
   <Router>
       <Routes>
-        <Route path="/:referralCode" element={<Home />} />
+        <Route path="/invite/:referralCode" element={<Home />} />
         {/* <Route path="/:referralCode" element={<Home userFn={userFn} userLn={userLn} userCode={userCode} />} /> */}
         {/* <Route path="/promo/:referralCode" element={<Home userFn={userFn} userLn={userLn} userCode={userCode} />} /> */}
       </Routes>
