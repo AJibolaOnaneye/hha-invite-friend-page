@@ -4,6 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import Logo from './assets/hha-logo.svg'
 import folding from './assets/folding-man.png'
 import chat from './assets/ai-chatroom.png'
+import loaderImg from './assets/hha-loader.svg'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ const Home = () => {
     const [userFn, setUserFn] = useState(null)
     const [userLn, setUserLn] = useState(null)
     const [userCode, setUserCode] = useState(null)
+
     // const number = '012314124';
   
     // console.log(referralCode);
@@ -41,9 +43,15 @@ const Home = () => {
         console.log(error);
       }
     };
+
+ 
   
     useEffect(() => {
+    
       getUser();
+
+     
+      
     }, [referralCode]);
 
 //   redirect to app store
@@ -111,8 +119,10 @@ const Home = () => {
  
 </div>
         ) : (
-            <div>
-                <h2>..Loading</h2>
+            <div className='w-full bg-lime-400 h-screen flex flex-row justify-center items-center '>
+                <img src={loaderImg} className='animate-bounce duration-1000' alt="loadimg image" />
+
+            
             </div>
         )}
       
