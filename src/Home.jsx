@@ -5,6 +5,7 @@ import Logo from './assets/hha-logo.svg'
 import folding from './assets/folding-man.png'
 import chat from './assets/ai-chatroom.png'
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -44,8 +45,22 @@ const Home = () => {
     useEffect(() => {
       getUser();
     }, [referralCode]);
-  
-  
+
+//   redirect to app store
+    const redirectToAppStore = () => {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+        if (/android/i.test(userAgent)) {
+          // User is on an Android device, redirect to the Google Play Store.
+          window.location.href = 'https://play.google.com/store/apps/details?id=your-app-package-name';
+        } else if (/iPad|iPhone|iPod/i.test(userAgent)) {
+          // User is on an iOS device, redirect to the Apple App Store.
+          window.location.href = 'https://apps.apple.com/app/your-app-id';
+        } else {
+          // For other devices or when the user agent cannot be determined, you can provide a generic link.
+          window.location.href = 'https://example.com/your-app';
+        }
+      };
   
 
  
@@ -55,16 +70,19 @@ const Home = () => {
    <div className='w-full '>
    <div className='mb-[2rem] md:mb-[5rem]'>
   <nav className='w-full h-full max-h-[2rem] flex flex-row items-start px-4 py-8 md:px-8 md:py-8'>
+    <Link to={'https://househelpapp.com'}>
   <img src={Logo} alt="HousehelpApp Logo"  className='w-full h-full max-w-[160px] max-h-[36px] md:max-w-[210px] md:max-h-[52px]'/>
+    
+    </Link>
   </nav>
   </div>
-  <div className='flex flex-col w-full items-center justify-center font-fraunces'>
+  <div className='flex flex-col w-full items-center justify-center font-fraunces px-2'>
 
 
   <div className=' text-center flex flex-col items-center justify-center gap-6 md:gap-12 mb-12 '>
-    <p className='text-[32px] md:text-[40px] w-full max-w-[744px] font-semibold '>Hi 👋🏾 , <span className=' text-[#2AB34B]'> {userFn}.{userLn?.slice(0, 1)}  </span>  wants you to join the HouseHelpApp family today. </p>
+    <p className='text-[28px] md:text-[40px] w-full max-w-[744px] font-semibold '>Hi 👋🏾 , <span className=' text-[#2AB34B]'> {userFn}.{userLn?.slice(0, 1)}  </span>  wants you to join the HouseHelpApp family today. </p>
 
-    <p className='text-[24px] md:text-[32px]'>use the code: <span className='text-[32px] md:text-[40px] font-semibold text-[#2AB34B]'>{userCode}</span></p>
+    <p className='text-[22px] md:text-[32px]'>use the code: <span className='text-[28px] md:text-[40px] font-semibold text-[#2AB34B]'>{userCode}</span></p>
   </div>
 
   <div className=' text-center flex flex-col items-center justify-center gap-4 mb-16 md:mb-32 '>
@@ -75,11 +93,11 @@ const Home = () => {
 
 {/* download button */}
   <div className='s text-center flex flex-col sm:flex-row items-center justify-center gap-4 relative w-full max-w-[500px]'>
-    <div className='w-full max-w-[280px] md:max-w-[390px] h-[60px] md:h-[80px] bg-[#00AAAF] text-white flex items-center justify-center text-[24px] md:text-[32px] font-semibold rounded-md hover:cursor-pointer mx-2 '>
+    <button onClick={redirectToAppStore} className='w-full max-w-[280px] md:max-w-[390px] h-[60px] md:h-[80px] bg-[#00AAAF] text-white flex items-center justify-center text-[24px] md:text-[32px] font-semibold rounded-md hover:cursor-pointer mx-2 '>
       Download Now
-    </div>
+    </button>
 
-    <img className=' ' src={folding} alt='avatar' />
+    <img className='  w-[63px] h-[131px]  md:w-[106px] md:h-[223px]' src={folding} alt='avatar' />
     {/* <img className=' absolute top-0 left-[24rem] md:left-[30rem]' src={folding} alt='avatar' /> */}
   </div>
   </div>
@@ -94,7 +112,7 @@ const Home = () => {
 </div>
         ) : (
             <div>
-                <h2>User not found</h2>
+                <h2>..Loading</h2>
             </div>
         )}
       
