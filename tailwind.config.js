@@ -5,12 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        frauces: ["Fraunces"],
-        poppins: ["poppins"]
-      }
+    fontFamily: {
+      fraunces: ["Fraunces"],
+      poppins: ["poppins"]
     },
+    extend: {},
   },
   plugins: [],
 }

@@ -58,23 +58,23 @@ const Home = () => {
   <img src={Logo} alt="HousehelpApp Logo"  className='w-full h-full max-w-[160px] max-h-[36px] md:max-w-[210px] md:max-h-[52px]'/>
   </nav>
   </div>
-  <div className='flex flex-col w-full items-center justify-center'>
+  <div className='flex flex-col w-full items-center justify-center font-fraunces'>
 
 
-  <div className='font-frauces text-center flex flex-col items-center justify-center gap-6 md:gap-12 mb-12 '>
+  <div className=' text-center flex flex-col items-center justify-center gap-6 md:gap-12 mb-12 '>
     <p className='text-[32px] md:text-[40px] w-full max-w-[744px] font-semibold '>Hi 👋🏾 , <span className=' text-[#2AB34B]'> {userFn}.{userLn?.slice(0, 1)}  </span>  wants you to join the HouseHelpApp family today. </p>
 
     <p className='text-[24px] md:text-[32px]'>use the code: <span className='text-[32px] md:text-[40px] font-semibold text-[#2AB34B]'>{userCode}</span></p>
   </div>
 
-  <div className='font-frauces text-center flex flex-col items-center justify-center gap-4 mb-16 md:mb-32 '>
+  <div className=' text-center flex flex-col items-center justify-center gap-4 mb-16 md:mb-32 '>
     <p className='text-[18px] md:text-[24px] w-full max-w-[744px]'>sign up as a <span className='font-semibold text-[#00AAAF]'>Client</span> and get access to professional services for your everyday needs </p>
     <p>OR</p>
     <p className='text-[18px] md:text-[24px] w-full max-w-[744px]'>sign up as a <span className='font-semibold text-[#00AAAF]'>Helper</span>, offer your professional services and earn money</p>
   </div>
 
 {/* download button */}
-  <div className='font-frauces text-center flex flex-col sm:flex-row items-center justify-center gap-4 relative w-full max-w-[500px]'>
+  <div className='s text-center flex flex-col sm:flex-row items-center justify-center gap-4 relative w-full max-w-[500px]'>
     <div className='w-full max-w-[280px] md:max-w-[390px] h-[60px] md:h-[80px] bg-[#00AAAF] text-white flex items-center justify-center text-[24px] md:text-[32px] font-semibold rounded-md hover:cursor-pointer mx-2 '>
       Download Now
     </div>
