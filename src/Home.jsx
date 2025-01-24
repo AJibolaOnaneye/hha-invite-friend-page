@@ -119,7 +119,7 @@ const Home = () => {
  
 </div>
         ) : (
-            <div className='w-full bg-lime-400 h-screen flex flex-row justify-center items-center '>
+            <div className='w-full bg-lime-800 h-screen flex flex-row justify-center items-center '>
                 <img src={loaderImg} className='animate-bounce duration-1000' alt="loadimg image" />
 
             
